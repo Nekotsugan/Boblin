@@ -1,0 +1,227 @@
+/* Color Palette:
+   #0E7C7B (Teal) | #17BEBB (Bright Teal) | #D4F4DD (Mint) | #37323E (Charcoal) | #59546C (Purple)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #37323E;
+    background-color: #D4F4DD;
+}
+
+/* NAVIGATION */
+.navbar {
+    background: #37323E;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.logo {
+    color: #17BEBB;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-links li {
+    height: 80px;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #D4F4DD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #17BEBB;
+}
+
+.btn-nav-simple {
+    border: 2px solid #17BEBB;
+    border-radius: 4px;
+    height: 45px !important; /* Adjusting height for the button look */
+    margin-top: 17px;
+}
+
+/* HAMBURGER MENU STYLES */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #D4F4DD;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 960px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%; /* Hidden off-screen */
+        opacity: 1;
+        transition: all 0.5s ease;
+        background: #37323E;
+    }
+
+    .nav-links.active {
+        left: 0;
+        opacity: 1;
+        z-index: 99;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hamburger Animation to 'X' */
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .btn-nav-simple {
+        border: none;
+        background: #17BEBB;
+        color: #37323E !important;
+        margin: 0;
+    }
+}
+
+/* OTHER SECTIONS (Kept for completeness) */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 100px 0; text-align: center; }
+.bg-light { background-color: #D4F4DD; }
+.bg-teal { background-color: #0E7C7B; color: #D4F4DD; }
+h2 { font-size: 3rem; margin-bottom: 2.5rem; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; text-align: left; }
+@media screen and (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+/* HERO */
+.hero {
+    /* The gradient adds a dark tint so your text is readable over the image */
+    background: linear-gradient(rgba(55, 50, 62, 0.7), rgba(55, 50, 62, 0.7)), 
+                url('../WebBCG.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This adds a nice parallax-style scroll effect */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D4F4DD;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.log-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 6px solid #17BEBB;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #17BEBB;
+    color: #37323E;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+footer {
+    background: #37323E;
+    color: #59546C;
+    padding: 3rem 0;
+    text-align: center;
+}

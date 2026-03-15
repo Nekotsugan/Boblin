@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boblin</title>
+    <link rel="icon" type="image/png" href="favicon.png?">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Boblin</div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#trailer">Trailer</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#download" class="btn-nav-simple">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Dive into the dungeon</h1>
+            <p>Are you ready for caves full of evil goblins?</p>
+            <a href="#download" class="btn-primary">Get the Game</a>
+        </div>
+    </header>
+
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <h2>About Game</h2>
+            <div class="grid">
+                <div class="content">
+                    <h3>A Prophecy in Blue</h3>
+                    <p>
+                        Years ago, the Crimson Goblin <b>Coblin</b> rose to power, turning the goblin tribes into a cruel empire of malice. When you — <b>Boblin</b>, a rare blue goblin — were born, the tribe elders trembled. Fearing another powerful leader would only bring more bloodshed, they cast you into the deep dungeons to perish.
+                    </p>
+                    <p>
+                        But you didn't die. You grew strong in the dark. Now, it's time to climb back up and take your revenge.
+                    </p>
+                </div>
+                <div class="content">
+                    <h3>Survive the Depths</h3>
+                    <p>
+                        Navigate through <b>procedurally generated dungeons</b> where no two runs are ever the same. Master top-down pixel art combat as you weave through deadly traps and hoard legendary treasures.
+                    </p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li>⚔️ <b>Loot & Level:</b> Find powerful gear to grow even stronger.</li>
+                        <li>🤝 <b>Unexpected Allies:</b> Meet NPCs trapped in the deep.</li>
+                        <li>👹 <b>Epic Bosses:</b> Face the Crimson Devourer himself.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trailer" class="section bg-teal">
+        <div class="container">
+            <h2>Official Trailer</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/2EOPgjtAYK4?rel=0" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="updates" class="section bg-light">
+        <div class="container">
+            <h2>Update Logs</h2>
+            <div class="log-card">
+                <span class="version">BETA | 14.3.2026</span>
+                <h3>First playtest version</h3>
+                <p>This is not full game version, please wait until March 15th.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="section bg-teal">
+        <div class="container">
+            <h2>Ready to Play?</h2>
+            <p>Download the latest build and start your journey today.</p>
+            <div class="download-box">
+                <a href="https://drive.google.com/drive/folders/1nrUl1HhEWd9fu-zZWnUZgxi4z6QXdP3l?hl=cs" class="btn-primary btn-large" target="_blank">Download for Windows</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name/Studio. Made with Unity.</p>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('.nav-links');
+
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+            menu.classList.remove('is-active');
+            menuLinks.classList.remove('active');
+        }));
+    </script>
+</body>
+</html>
